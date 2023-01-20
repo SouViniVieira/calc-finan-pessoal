@@ -1,3 +1,11 @@
+.pagina {
+   background: #E9ECEF;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100vh;
+}
+
 .card{
     margin:auto;
     max-width:500px;
