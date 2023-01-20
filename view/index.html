@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculadora Financeira</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="/assets/src/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+  </head>
+  <body class="d-flex justify-content-center">
+    <div class="d-flex flex-column">
+      <div id="card-calculo" class="card mx-auto w-100 text-center">
+        <div class="card-body d-grid gap-3">
+          <h4 class="card-title">Calculadora Financeira</h4>
+          <h6 class="card-subtitle mb-2 text-muted">
+            Insira os valores para começar a calcular.
+          </h6>
+          <form class="form-group">
+            <label for="saldo-atual">Saldo Atual:</label>
+            <input
+              type="text"
+              id="saldo-atual"
+              name="saldo-atual"
+              value="0"
+              class="form-control"
+            />
+            <br />
+            <label for="gastos-obrigatorios">Gastos Obrigatórios:</label>
+            <input
+              type="text"
+              id="gastos-obrigatorios"
+              name="gastos-obrigatorios"
+              value="0"
+              class="form-control"
+            />
+            <br />
+            <label for="dinheiro-lazer">Dinheiro para Lazer:</label>
+            <input
+              type="text"
+              id="dinheiro-lazer"
+              name="dinheiro-lazer"
+              value="0"
+              class="form-control"
+            />
+            <br />
+            <label for="investimento">Investimento:</label>
+            <input
+              type="text"
+              id="investimento"
+              name="investimento"
+              value="0"
+              class="form-control"
+            />
+            <br />
+            <label for="guardar">Guardar:</label>
+            <input
+              type="text"
+              id="guardar"
+              name="guardar"
+              value="0"
+              class="form-control"
+            />
+            <br />
+            <button type="button" id="calcular" class="btn btn-primary">
+              Calcular
+            </button>
+          </form>
+        </div>
+      </div>
+      <div
+        id="card-resultado"
+        class="card mx-auto w-100 text-center my-3 d-none"
+      ></div>
+      <div class="card-body"></div>
+    </div>
+    <script src="/assets/js/script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
