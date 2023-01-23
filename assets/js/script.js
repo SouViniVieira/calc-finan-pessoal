@@ -5,12 +5,14 @@ $(document).ready(function () {
     $(this).val(novoValor);
   });
 
+  //Mascara para moedas.
   $("#saldo-atual").mask("R$ 999.999.999,99");
   $("#gastos-obrigatorios").mask("R$ 999.999.999,99");
   $("#dinheiro-lazer").mask("R$ 999.999.999,99");
   $("#investimento").mask("R$ 999.999.999,99");
   $("#guardar").mask("R$ 999.999.999,99");
 
+  //Pega os valores de cada input, converte de string pra float, avalia se não está retornando nulo, calcula e então gera um card novo com o resultado.
   document.getElementById("calcular").addEventListener("click", function () {
     var saldoAtual = document.getElementById("saldo-atual").value;
     var gastosObrigatorios = document.getElementById(
@@ -38,6 +40,7 @@ $(document).ready(function () {
           style: "currency",
           currency: "BRL",
         });
+      document.getElementById("card-resultado").classList.add("valor-destaque");
       document.getElementById("card-resultado").classList.remove("d-none");
       document.getElementById("card-resultado").style.display = "block";
     } else {
@@ -47,7 +50,9 @@ $(document).ready(function () {
           style: "currency",
           currency: "BRL",
         });
+      document.getElementById("card-resultado").classList.add("valor-destaque");
       document.getElementById("card-resultado").style.display = "block";
     }
   });
 });
+
