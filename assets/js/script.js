@@ -1,37 +1,53 @@
-document.getElementById("calcular").addEventListener("click", function () {
-  var saldoAtual = parseFloat(
-    document.getElementById("saldo-atual").value.replace("R$", "")
-  );
-  var gastosObrigatorios = parseFloat(
-    document.getElementById("gastos-obrigatorios").value.replace("R$", "")
-  );
-  var dinheiroLazer = parseFloat(
-    document.getElementById("dinheiro-lazer").value.replace("R$", "")
-  );
-  var investimento = parseFloat(
-    document.getElementById("investimento").value.replace("R$", "")
-  );
-  var guardar = parseFloat(
-    document.getElementById("guardar").value.replace("R$", "")
-  );
-  var totalGastos = gastosObrigatorios + dinheiroLazer + investimento + guardar;
-  var resultado = saldoAtual - totalGastos;
-  if (resultado > 0) {
-    document.getElementById("card-resultado").innerHTML =
-      "Você tem atualmente: " + resultado.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-    document.getElementById("card-resultado").classList.remove("d-none");
-    document.getElementById("card-resultado").style.display = "block";
-  } else {
-    document.getElementById("card-resultado").innerHTML =
-      "Você tem atualmente: " + resultado.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-    document.getElementById("card-resultado").style.display = "block";
-  }
-});
-
 $(document).ready(function () {
+  $("input").on("input", function () {
+    var valor = $(this).val();
+    var novoValor = valor.replace(/\D/g, "");
+    $(this).val(novoValor);
+  });
+
   $("#saldo-atual").mask("R$ 999.999.999,99");
   $("#gastos-obrigatorios").mask("R$ 999.999.999,99");
   $("#dinheiro-lazer").mask("R$ 999.999.999,99");
   $("#investimento").mask("R$ 999.999.999,99");
   $("#guardar").mask("R$ 999.999.999,99");
+
+  document.getElementById("calcular").addEventListener("click", function () {
+    var saldoAtual = document.getElementById("saldo-atual").value;
+    var gastosObrigatorios = document.getElementById(
+      "gastos-obrigatorios"
+    ).value;
+    var dinheiroLazer = document.getElementById("dinheiro-lazer").value;
+    var investimento = document.getElementById("investimento").value;
+    var guardar = document.getElementById("guardar").value;
+    saldoAtual = parseFloat(saldoAtual.replace(/[R$,]/g, ""));
+    gastosObrigatorios = parseFloat(gastosObrigatorios.replace(/[R$,]/g, ""));
+    dinheiroLazer = parseFloat(dinheiroLazer.replace(/[R$,]/g, ""));
+    investimento = parseFloat(investimento.replace(/[R$,]/g, ""));
+    guardar = parseFloat(guardar.replace(/[R$,]/g, ""));
+    if (isNaN(saldoAtual)) saldoAtual = 0;
+    if (isNaN(gastosObrigatorios)) gastosObrigatorios = 0;
+    if (isNaN(dinheiroLazer)) dinheiroLazer = 0;
+    if (isNaN(investimento)) investimento = 0;
+    if (isNaN(guardar)) guardar = 0;
+    var totalGastos = gastosObrigatorios + dinheiroLazer + investimento + guardar;
+    var resultado = saldoAtual - totalGastos;
+    if (resultado > 0) {
+      document.getElementById("card-resultado").innerHTML =
+        "Você tem atualmente: " +
+        resultado.toLocaleString("pt-BR", {
+          style: "currency",
+          currency: "BRL",
+        });
+      document.getElementById("card-resultado").classList.remove("d-none");
+      document.getElementById("card-resultado").style.display = "block";
+    } else {
+      document.getElementById("card-resultado").innerHTML =
+        "Você tem atualmente: " +
+        resultado.toLocaleString("pt-BR", {
+          style: "currency",
+          currency: "BRL",
+        });
+      document.getElementById("card-resultado").style.display = "block";
+    }
+  });
 });
