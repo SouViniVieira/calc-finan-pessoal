@@ -31,28 +31,32 @@ $(document).ready(function () {
     if (isNaN(dinheiroLazer)) dinheiroLazer = 0;
     if (isNaN(investimento)) investimento = 0;
     if (isNaN(guardar)) guardar = 0;
-    var totalGastos = gastosObrigatorios + dinheiroLazer + investimento + guardar;
+    var totalGastos =
+      gastosObrigatorios + dinheiroLazer + investimento + guardar;
     var resultado = saldoAtual - totalGastos;
     if (resultado > 0) {
       document.getElementById("card-resultado").innerHTML =
-        "Você tem atualmente: " +
+        "<span class='texto-discreto'>Você tem atualmente: </span>" +
+        "<span class='valor-destaque'>" +
         resultado.toLocaleString("pt-BR", {
           style: "currency",
           currency: "BRL",
-        });
+        }) +
+        "</span>";
       document.getElementById("card-resultado").classList.add("valor-destaque");
       document.getElementById("card-resultado").classList.remove("d-none");
       document.getElementById("card-resultado").style.display = "block";
     } else {
       document.getElementById("card-resultado").innerHTML =
-        "Você tem atualmente: " +
+        "<span class='texto-discreto'>Você tem atualmente: </span>" +
+        "<span class='valor-destaque'>" +
         resultado.toLocaleString("pt-BR", {
           style: "currency",
           currency: "BRL",
-        });
+        }) +
+        "</span>";
       document.getElementById("card-resultado").classList.add("valor-destaque");
       document.getElementById("card-resultado").style.display = "block";
     }
   });
 });
-

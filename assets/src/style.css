@@ -1,39 +1,49 @@
 .pagina {
-   background: #E9ECEF;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   height: 100vh;
+  background: #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
-.card{
-    margin:auto;
-    max-width:500px;
+.card {
+  margin: auto;
+  max-width: 500px;
 
-    background: #FFFFFF;
-    box-shadow: 0px 10px 30px rgba(17, 38, 146, 0.05);
- }
+  background: #ffffff;
+  box-shadow: 0px 10px 30px rgba(17, 38, 146, 0.05);
+}
 
- #calcular {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 8px 24px;
-    gap: 10px;
-    background: #3A57E8;
-    box-shadow: 0px 2px 4px rgba(58, 87, 232, 0.3);
-    border-radius: 4px;
- }
+#calcular {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 8px 24px;
+  gap: 10px;
+  background: #3a57e8;
+  box-shadow: 0px 2px 4px rgba(58, 87, 232, 0.3);
+  border-radius: 4px;
+}
 
- #card-resultado {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   padding: 24px;
-   gap: 8px;
+#card-resultado {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  gap: 8px;
 
-   background: #FFFFFF;
-   box-shadow: 0px 10px 13px rgba(17, 38, 146, 0.05);
-   border-radius: 8px;
- }
+  background: #ffffff;
+  box-shadow: 0px 10px 13px rgba(17, 38, 146, 0.05);
+  border-radius: 8px;
+}
+
+.texto-discreto {
+  color: rgb(211, 208, 208);
+  font-size: 14px;
+}
+
+.valor-destaque {
+  font-size: 18px;
+  font-weight: bold;
+}

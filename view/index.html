@@ -78,7 +78,15 @@
       <div
         id="card-resultado"
         class="card mx-auto w-100 text-center d-none my-3 border-0"
-      ></div>
+      >
+        <div class="saldo">
+          <span class="texto-discreto">Saldo: </span>"
+          <span class="valor-destaque"
+            >" + resultado.toLocaleString("pt-BR", { style: "currency",
+            currency: "BRL" }) + "</span
+          >
+        </div>
+      </div>
     </div>
     <script src="/assets/js/script.js"></script>
     <script
